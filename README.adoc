@@ -208,7 +208,7 @@ Find installation instructions link:https://github.com/itu-devops/MSc_lecture_no
 === Team
 
 * *Teachers*: Helge, Mircea
-* *TAs*: Ahmet, Babette, Patrick
+* *TAs*: Talha, Babette, Patrick
 
 === Communication
 
