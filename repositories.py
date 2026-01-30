@@ -22,8 +22,8 @@ GROUP_REPOS = [
     ],
     [
         "group d",
-        "<name>",
-        ["https://github.com/<organization|user>/<repository_name>"],
+        "Dense Dino Nuggets",
+        ["https://github.com/Slug-Boi-ITU-Repositories/Dense-Dino-Nuggets"],
         "http(s)://<TBA>/<FrontEndURL>",
         "http(s)://<TBA>/<APIURL>",
     ],
