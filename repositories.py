@@ -15,8 +15,8 @@ GROUP_REPOS = [
     ],
     [
         "group c",
-        "<name>",
-        ["https://github.com/<organization|user>/<repository_name>"],
+        "group c",
+        ["https://github.com/jskoven/Devops2026_jklo_jakst_aing_asjo_mbln"],
         "http(s)://<TBA>/<FrontEndURL>",
         "http(s)://<TBA>/<APIURL>",
     ],
