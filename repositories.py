@@ -78,8 +78,8 @@ GROUP_REPOS = [
     ],
     [
         "group l",
-        "<name>",
-        ["https://github.com/<organization|user>/<repository_name>"],
+        "Deploy and pray",
+        ["https://github.com/ITU-DEVOPS2026-GROUP-l/deploy_and_pray"],
         "http(s)://<TBA>/<FrontEndURL>",
         "http(s)://<TBA>/<APIURL>",
     ],
