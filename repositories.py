@@ -71,8 +71,8 @@ GROUP_REPOS = [
     ],
     [
         "group k",
-        "<name>",
-        ["https://github.com/<organization|user>/<repository_name>"],
+        "DevBobs",
+        ["https://github.com/mortfb/Devops_devBobs"],
         "http(s)://<TBA>/<FrontEndURL>",
         "http(s)://<TBA>/<APIURL>",
     ],
