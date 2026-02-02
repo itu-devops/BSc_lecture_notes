@@ -97,7 +97,7 @@ link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/sessio
 |link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_09/README_TASKS.md[Isolate components into services/containers/VMs]
 // w14
 |–
-|31/4
+|31/3
 |-
 |-
 |Easter Break
