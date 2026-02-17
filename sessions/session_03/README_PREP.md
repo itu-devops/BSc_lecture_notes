@@ -5,7 +5,7 @@ Install VirtualBox and Vagrant on your computer.
 
 ### Vagrant & VirtualBox
 
-**Note :** In case you are running MacOS or Windows you might find helpful [installation instructions for your host operating system in the linked guide](https://www.itu.dk/people/ropf/blog/vagrant_install.html).
+<!-- **Note :** In case you are running MacOS or Windows you might find helpful [installation instructions for your host operating system in the linked guide](https://www.itu.dk/people/ropf/blog/vagrant_install.html). -->
 
 **Note:** VirtualBox cannot be run in a VirtualBox VM. Since we are using Vagrant here to provide VirtualBox virtual machines, it means that you should install Vagrant and related plugins directly in your host OS (Windows/MacOS) if you are running Linux in a virtual machine already.
 
