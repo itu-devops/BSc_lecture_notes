@@ -10,8 +10,8 @@ GROUP_REPOS = [
         "group b",
         "catch(RuntimeException){goto f;}",
         ["https://github.com/JohannesHackl/DevOps26_RE_minitwit.git"],
-        "http(s)://<TBA>/<FrontEndURL>",
-        "http(s)://<TBA>/<APIURL>",
+        "http://164.92.186.201:5001",
+        "http://164.92.186.201:5001/api",
     ],
     [
         "group c",
