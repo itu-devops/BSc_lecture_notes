@@ -91,4 +91,11 @@ GROUP_REPOS = [
         "http(s)://<TBA>/<FrontEndURL>",
         "http(s)://<TBA>/<APIURL>",
     ],
+    [
+        "group p",
+        "rollback & relax",
+        ["https://github.com/alqeren1/devops.git"],
+        "http://ec2-13-51-198-31.eu-north-1.compute.amazonaws.com:3000/timeline",
+        "http(s)://<TBA>/<APIURL>",
+    ],
 ]
