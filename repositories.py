@@ -59,8 +59,8 @@ GROUP_REPOS = [
         "group k",
         "Pat Myaz",
         ["https://github.com/ITU-DevOps2026/ITU-minitwit"],
-        "http(s)://<TBA>/<FrontEndURL>",
-        "http(s)://<TBA>/<APIURL>",
+        "http://209.38.114.224:5035",
+        "http://209.38.114.224:5035/api",
     ],
     [
         "group m",
