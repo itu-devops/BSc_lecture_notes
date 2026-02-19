@@ -53,8 +53,8 @@ GROUP_REPOS = [
         "group i",
         "Team Connie",
         ["https://github.com/21Philip/devops-minitwit"],
-        "http(s)://<TBA>/<FrontEndURL>",
-        "http(s)://<TBA>/<APIURL>",
+        "http://146.190.204.218:5001",
+        "http://146.190.204.218:5000",
     ],
     [
         "group j",
