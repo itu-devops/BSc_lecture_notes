@@ -59,7 +59,7 @@ GROUP_REPOS = [
     [
         "group j",
         "Chirp Vee2",
-        ["https://github.com/PokingPines/Chirp-Vee2"],
+        ["https://github.com/ITU-DevOps-2026-J/Chirp-Vee2"],
         "http://157.245.27.199:8080/",
         "http://157.245.27.199:8080/",
     ],
