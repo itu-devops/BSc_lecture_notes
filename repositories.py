@@ -2,7 +2,7 @@ GROUP_REPOS = [
     [
         "group a",
         "Ducks",
-        ["https://github.com/Alexitu01/DevOps_Ducks>"],
+        ["https://github.com/Alexitu01/DevOps_Ducks"],
         "http(s)://<TBA>/<FrontEndURL>",
         "http(s)://<TBA>/<APIURL>",
     ],
