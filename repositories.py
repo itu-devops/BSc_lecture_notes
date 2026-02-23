@@ -8,10 +8,10 @@ GROUP_REPOS = [
     ],
     [
         "group b",
-        "catch(RuntimeException){goto f;}",
-        ["https://github.com/JohannesHackl/DevOps26_RE_minitwit"],
-        "http(s)://<TBA>/<FrontEndURL>",
-        "http(s)://<TBA>/<APIURL>",
+        "Carl ⏰",
+        ["https://github.com/DevOps-Group-B/MiniTwit"],
+        "http://165.227.170.149",
+        "http://165.227.170.149",
     ],
     [
         "group c",
@@ -95,6 +95,13 @@ GROUP_REPOS = [
         "DevTroopers",
         ["https://github.com/DevTroopers-ITU/itu-minitwit"],
         "http(s)://<TBA>/<FrontEndURL>",
+        "http(s)://<TBA>/<APIURL>",
+    ],
+    [
+        "group p",
+        "rollback & relax",
+        ["https://github.com/alqeren1/devops.git"],
+        "http://ec2-13-51-198-31.eu-north-1.compute.amazonaws.com:3000/timeline",
         "http(s)://<TBA>/<APIURL>",
     ],
 ]
