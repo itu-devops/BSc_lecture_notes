@@ -46,8 +46,8 @@ GROUP_REPOS = [
         "group g",
         "GruppeOG",
         ["https://github.com/Joakim-David/GruppeOG"],
-        "http(s)://<TBA>/<FrontEndURL>",
-        "http(s)://<TBA>/<APIURL>",
+        "http://142.93.169.145:7273/",
+        "http://142.93.169.145:7273/",
     ],
     [
         "group i",
