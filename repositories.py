@@ -45,8 +45,8 @@ GROUP_REPOS = [
         "group g",
         "GruppeOG",
         ["https://github.com/Joakim-David/GruppeOG"],
-        "http://142.93.169.145:7273/",
-        "http://142.93.169.145:7273/",
+        "http://142.93.169.145:7273",
+        "http://142.93.169.145:7273",
     ],
     [
         "group i",
@@ -59,8 +59,8 @@ GROUP_REPOS = [
         "group j",
         "Chirp Vee2",
         ["https://github.com/ITU-DevOps-2026-J/Chirp-Vee2"],
-        "http://157.245.27.199:8080/",
-        "http://157.245.27.199:8080/",
+        "http://157.245.27.199:8080",
+        "http://157.245.27.199:8080",
     ],
     [
         "group k",
