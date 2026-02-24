@@ -70,6 +70,13 @@ GROUP_REPOS = [
         "http://209.38.230.113:8080",
     ],
     [
+        "group l",
+        "Deploy and pray",
+        ["https://github.com/<LinkTo>/<Repostiory>"],
+        "http(s)://<TBA>/<FrontEndURL>",
+        "http(s)://<TBA>/<APIURL>",
+    ],
+    [
         "group m",
         "Jackhammers",
         ["https://github.com/RonoITU/itu-devops2026-jackhammers"],
