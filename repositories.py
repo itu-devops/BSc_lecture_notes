@@ -71,10 +71,10 @@ GROUP_REPOS = [
     ],
     [
         "group m",
-        "Holy C Enjoyers",
-        ["https://github.com/MudiLoodi/minitwit"],
-        "http(s)://<TBA>/<FrontEndURL>",
-        "http(s)://<TBA>/<APIURL>",
+        "Jackhammers",
+        ["https://github.com/RonoITU/itu-devops2026-jackhammers"],
+        "https://windysquirrels.dk",
+        "https://windysquirrels.dk/api",
     ],
     [
         "group n",
