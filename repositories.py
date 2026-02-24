@@ -44,7 +44,7 @@ GROUP_REPOS = [
     [
         "group g",
         "GruppeOG",
-        ["https://git.marfavi.com/DevOpps/itu-minitwit-migration"],
+        ["https://github.com/Joakim-David/GruppeOG"],
         "http://142.93.169.145:7273/",
         "http://142.93.169.145:7273/",
     ],
