@@ -3,8 +3,8 @@ GROUP_REPOS = [
         "group a",
         "Ducks",
         ["https://github.com/Alexitu01/DevOps_Ducks"],
-        "http(s)://<TBA>/<FrontEndURL>",
-        "http(s)://<TBA>/<APIURL>",
+        "http://46.101.212.68/>",
+        "http://46.101.212.68/",
     ],
     [
         "group b",
