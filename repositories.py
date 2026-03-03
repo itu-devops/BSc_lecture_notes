@@ -17,8 +17,8 @@ GROUP_REPOS = [
         "group c",
         "youCanCUs",
         ["https://github.com/Anders0106/Devops2026"],
-        "https://devops2026-production.up.railway.app",
-        "https://devops2026-production.up.railway.app",
+        "https://srv1039100.tail89935c.ts.net:8443",
+        "https://srv1039100.tail89935c.ts.net:8443",
     ],
     [
         "group d",
