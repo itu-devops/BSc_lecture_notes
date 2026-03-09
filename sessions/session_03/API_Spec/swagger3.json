@@ -1,0 +1,437 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Minitwit API",
+    "description": "Minitwit API",
+    "version": "1.0"
+  },
+  "servers": [{ "url": "/" }],
+  "tags": [{ "name": "Minitwit", "description": "Default namespace" }],
+  "paths": {
+    "/fllws/{username}": {
+      "get": {
+        "tags": ["Minitwit"],
+        "description": "Get list of users followed by the given user.\n\n- Query param `?no=` limits result count.\n- Optionally updates a 'latest' global value via `?latest=` query param.",
+        "operationId": "get_follow",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "latest",
+            "in": "query",
+            "description": "Optional: `latest` value to update",
+            "schema": { "type": "integer" }
+          },
+          {
+            "name": "no",
+            "in": "query",
+            "description": "Optional: `no` limits result count",
+            "schema": { "type": "integer", "default": 100 }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Authorization string of the form `Basic c2ltdWxhdG9yOnN1cGVyX3NhZmUh`. Used to authenticate as simulator",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/FollowsResponse" }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized - Must include correct Authorization header",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found (no response body)",
+            "content": {}
+          }
+        }
+      },
+      "post": {
+        "tags": ["Minitwit"],
+        "description": "Follow or unfollow a user on behalf of `username`.\n\n- Body must contain either `follow: <user>` or `unfollow: <user>`",
+        "operationId": "post_follow",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "latest",
+            "in": "query",
+            "description": "Optional: `latest` value to update",
+            "schema": { "type": "integer" }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Authorization string of the form `Basic c2ltdWxhdG9yOnN1cGVyX3NhZmUh`. Used to authenticate as simulator",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/FollowAction" }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": { "description": "No Content", "content": {} },
+          "403": {
+            "description": "Unauthorized - Must include correct Authorization header",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found (no response body)",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "payload"
+      }
+    },
+    "/latest": {
+      "get": {
+        "tags": ["Minitwit"],
+        "description": "Returns the latest ID saved",
+        "operationId": "get_latest_value",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/LatestValue" }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/msgs": {
+      "get": {
+        "tags": ["Minitwit"],
+        "description": "Get recent messages.\n\n- Filters out flagged messages\n- Returns a list of recent messages (max defined by `?no=` param)\n- Optionally updates a 'latest' global value via `?latest=` query param.",
+        "operationId": "get_messages",
+        "parameters": [
+          {
+            "name": "latest",
+            "in": "query",
+            "description": "Optional: `latest` value to update",
+            "schema": { "type": "integer" }
+          },
+          {
+            "name": "no",
+            "in": "query",
+            "description": "Optional: `no` limits result count",
+            "schema": { "type": "integer", "default": 100 }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Authorization string of the form `Basic c2ltdWxhdG9yOnN1cGVyX3NhZmUh`. Used to authenticate as simulator",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Message" }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized - Must include correct Authorization header",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/msgs/{username}": {
+      "get": {
+        "tags": ["Minitwit"],
+        "description": "Get messages for a specific user.\n\n- Returns messages authored by the specified user\n- Filtered by unflagged\n- Returns a list of recent messages for the user (max defined by `?no=` param)\n- Optionally updates a 'latest' global value via `?latest=` query param.",
+        "operationId": "get_messages_per_user",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "latest",
+            "in": "query",
+            "description": "Optional: `latest` value to update",
+            "schema": { "type": "integer" }
+          },
+          {
+            "name": "no",
+            "in": "query",
+            "description": "Optional: `no` limits result count",
+            "schema": { "type": "integer", "default": 100 }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Authorization string of the form `Basic c2ltdWxhdG9yOnN1cGVyX3NhZmUh`. Used to authenticate as simulator",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Message" }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized - Must include correct Authorization header",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found (no response body)",
+            "content": {}
+          }
+        }
+      },
+      "post": {
+        "tags": ["Minitwit"],
+        "description": "Post a new message as a specific user.\n\n- Message must include `content` in the body\n- Stored with timestamp and `flagged=0`\n- Returns empty body on success\n- Optionally updates a 'latest' global value via `?latest=` query param.",
+        "operationId": "post_messages_per_user",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "latest",
+            "in": "query",
+            "description": "Optional: `latest` value to update",
+            "schema": { "type": "integer" }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Authorization string of the form `Basic c2ltdWxhdG9yOnN1cGVyX3NhZmUh`. Used to authenticate as simulator",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/PostMessage" }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": { "description": "No Content", "content": {} },
+          "403": {
+            "description": "Unauthorized - Must include correct Authorization header",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "payload"
+      }
+    },
+    "/register": {
+      "post": {
+        "tags": ["Minitwit"],
+        "description": "Register a new user.\n- Optionally updates a 'latest' global value via `?latest=` query param.",
+        "operationId": "post_register",
+        "parameters": [
+          {
+            "name": "latest",
+            "in": "query",
+            "description": "Optional: `latest` value to update",
+            "schema": { "type": "integer" }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/RegisterRequest" }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": { "description": "No Content", "content": {} },
+          "400": {
+            "description": "Bad Request | Possible reasons:\n - missing username \n- invalid email \n- password missing \n- username already taken",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "payload"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "description": "HTTP error code",
+            "example": 403
+          },
+          "error_msg": {
+            "type": "string",
+            "description": "Error message",
+            "example": "You are not authorized to use this resource!"
+          }
+        }
+      },
+      "LatestValue": {
+        "type": "object",
+        "properties": {
+          "latest": {
+            "type": "integer",
+            "description": "The latest global value"
+          }
+        }
+      },
+      "RegisterRequest": {
+        "required": ["email", "pwd", "username"],
+        "type": "object",
+        "properties": {
+          "username": { "type": "string", "description": "Username" },
+          "email": { "type": "string", "description": "Email address" },
+          "pwd": { "type": "string", "description": "Password" }
+        }
+      },
+      "Message": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string",
+            "description": "Text content of the message",
+            "example": "Hello, World!"
+          },
+          "pub_date": {
+            "type": "string",
+            "description": "Publication date/time of the message",
+            "example": "2019-12-01 12:00:00"
+          },
+          "user": {
+            "type": "string",
+            "description": "Username of the message author",
+            "example": "Helge"
+          }
+        }
+      },
+      "PostMessage": {
+        "required": ["content"],
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string",
+            "description": "Text content of the message",
+            "example": "Hello, World!"
+          }
+        }
+      },
+      "FollowAction": {
+        "type": "object",
+        "properties": {
+          "follow": {
+            "type": "string",
+            "description": "Username to follow (optional, either this or \"unfollow\")",
+            "example": "Helge"
+          },
+          "unfollow": {
+            "type": "string",
+            "description": "Username to unfollow (optional, either this or \"follow\")",
+            "example": "Helge"
+          }
+        }
+      },
+      "FollowsResponse": {
+        "type": "object",
+        "properties": {
+          "follows": {
+            "type": "array",
+            "description": "List of usernames the user is following",
+            "example": ["Helge", "John"],
+            "items": { "type": "string" }
+          }
+        }
+      }
+    },
+    "responses": {
+      "ParseError": {
+        "description": "When a mask can't be parsed",
+        "content": {}
+      },
+      "MaskError": {
+        "description": "When any error occurs on mask",
+        "content": {}
+      }
+    }
+  },
+  "x-original-swagger-version": "2.0"
+}

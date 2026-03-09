@@ -549,6 +549,7 @@ Let's have a look at the `Dockerfile` that specifies our webserver.
 FROM golang:1.25-alpine
 
 # Install any needed dependencies...
+RUN apk add curl
 # RUN go get ...
 
 # Set the working directory
@@ -562,7 +563,7 @@ EXPOSE 8080
 
 # Build and run the server when the container is started
 RUN go build /src/basic_http_server.go
-ENTRYPOINT ./basic_http_server
+ENTRYPOINT ["./basic_http_server"]
 ```
 
 ---
@@ -630,7 +631,7 @@ $ docker start webserver
 ```Dockerfile
 FROM appropriate/curl:latest
 
-ENTRYPOINT curl -s http://webserver:8080
+ENTRYPOINT ["curl", "-s", "http://webserver:8080"]
 ```
 
 ### Building the Client Image

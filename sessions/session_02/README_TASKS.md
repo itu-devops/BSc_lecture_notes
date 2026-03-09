@@ -5,7 +5,7 @@
 
 <img src="https://media.giphy.com/media/13GIgrGdslD9oQ/giphy.gif" width=50%/>
 
-  - [1) Refactor _ITU-MiniTwit_ to another language and technology of your choice.](#1-refactor-itu-minitwit-to-another-language-and-technology-of-your-choice)
+  - [1) Replace _ITU-MiniTwit_ with C♯ ASP.Net _Chirp_ application.](#1-replace-itu-minitwit-with-c-asp.net-chirp-application)
   - [2) Containerize _ITU-MiniTwit_ with Docker.](#2-containerize-itu-minitwit-with-docker)
   - [3) Preparation for next time](#3-preparation-for-next-time)
 

@@ -37,7 +37,7 @@ Lectures are on Tuesdays from 8:00 to 10:00 in rooms 2A12-14 and exercises are o
 |link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_02/README_PREP.md[Prep. material]
 |link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_02/Slides.md[Packaging applications, Containerization with Docker]
 |link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_02/README_EXERCISE.md[Using Docker]
-|link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_02/README_TASKS.md[Refactor _ITU-MiniTwit_ in another programming language and tech. stack]
+|link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_02/README_TASKS.md[Containerize _ITU-MiniTwit_ with Docker]
 // w7
 |3
 |10/2
@@ -45,7 +45,7 @@ Lectures are on Tuesdays from 8:00 to 10:00 in rooms 2A12-14 and exercises are o
 |link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_03/README_PREP.md[Prep. material]
 |link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_03/Slides.md[Provision of local and remote virtual machines]
 |link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_03/README_EXERCISE.md[Using Vagrant, VirtualBox, and DigitalOcean]
-|link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_03/README_TASKS.md[Continue refactoring, deployment of your _ITU-MiniTwit_ to a remote server.]
+|link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_03/README_TASKS.md[Deployment of _ITU-MiniTwit_ to a remote server, and implementation of simulator API]
 // w8
 |4
 |17/2
@@ -54,7 +54,7 @@ Lectures are on Tuesdays from 8:00 to 10:00 in rooms 2A12-14 and exercises are o
 |*Guest Lecture: "What is DevOps?" by Jan from Eficode*;
 link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_04/Slides.md[Continuous Integration (CI), Continuous Delivery (CD), and Continuous Deployment]
 |link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_04/README_EXERCISE.md[Using GitHub Actions CI] (*Simulator test*)
-|link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_04/README_TASKS.md[Continue refactoring, Setup CI & CD for reproducible builds, tests, delivery, and deployment]
+|link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_04/README_TASKS.md[Setup CI & CD for reproducible builds, tests, delivery, and deployment]
 // w9
 |5
 |24/2
@@ -91,10 +91,10 @@ link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/sessio
 |9
 |24/3
 |8:00 - 12:00
-|link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_09/README_PREP.md[Prep. material]
-|link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_09/Slides.md[Availability]
-|link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_09/README_EXERCISE.md[A Basic Swarm]
-|link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_09/README_TASKS.md[Isolate components into services/containers/VMs]
+|-
+|link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_09/Slides.md[Security, Firewall, and TLS]
+|link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_09/README_EXERCISE.md[Pentesting]
+|link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_09/README_TASKS.md[Security Hardening]
 // w14
 |–
 |31/3
@@ -107,10 +107,10 @@ link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/sessio
 |10
 |7/4
 |8:00 - 12:00
-|-
-|link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_10/Slides.md[Security, Firewall, and TLS]
-|link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_10/README_EXERCISE.md[Pentesting]
-|link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_10/README_TASKS.md[Security Hardening]
+|link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_10/README_PREP.md[Prep. material]
+|link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_10/Slides.md[Availability]
+|link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_10/README_EXERCISE.md[A Basic Swarm]
+|link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_10/README_TASKS.md[Isolate components into services/containers/VMs]
 // w16
 |11
 |14/4
@@ -155,21 +155,16 @@ TBA
 
 ==== Activity Dashboard
 
-////
+* link:http://209.38.211.172/status.html[Overview]
+* link:http://209.38.211.172/commit_activity_daily.svg[Daily commit activity per group]
+* link:http://209.38.211.172/commit_activity_weekly.svg[Weekly commit activity per group]
+* link:http://209.38.211.172/release_activity_weekly.svg[Weekly release activity per group]
 
-* link:http://138.68.66.124/status.html[Overview]
-* link:http://138.68.66.124/commit_activity_daily.svg[Daily commit activity per group]
-* link:http://138.68.66.124/commit_activity_weekly.svg[Weekly commit activity per group]
-* link:http://138.68.66.124/release_activity_weekly.svg[Weekly release activity per group]
-
-////
 
 ==== Simulator Status Dashboard
 
-////
-* link:http://206.81.20.113/status.html[Status and simulator API errors per group]
+* link:http://64.226.108.122/status.html[Status and simulator API errors per group]
 
-////
 
 === Recordings
 
