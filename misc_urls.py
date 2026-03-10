@@ -75,9 +75,9 @@ GROUP_URLS = [
     ],
     [
         "group j",
-        "<name>",
+        "Chirp Vee2",
         # Monitoring URL:
-        "<monitoring_url>",
+        "http://157.245.27.199:3000",
         # Logging URL:
         "<logging_url>",
     ],
