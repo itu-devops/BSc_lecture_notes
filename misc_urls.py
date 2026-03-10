@@ -17,9 +17,9 @@ GROUP_URLS = [
     ],
     [
         "group c",
-        "<name>",
+        "YouCanCMe",
         # Monitoring URL:
-        "<monitoring_url>",
+        "https://srv1039100.tail89935c.ts.net:10000",
         # Logging URL:
         "<logging_url>",
     ],
