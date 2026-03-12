@@ -99,9 +99,9 @@ GROUP_URLS = [
     ],
     [
         "group l",
-        "<name>",
+        "Deploy and pray",
         # Monitoring URL:
-        "<monitoring_url>",
+        "http://161.35.211.34:3000/login",
         # Logging URL:
         "<logging_url>",
     ],
