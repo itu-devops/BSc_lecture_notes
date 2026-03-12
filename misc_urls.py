@@ -3,7 +3,7 @@ GROUP_URLS = [
         "group a",
         "<name>",
         # Monitoring URL:
-        "<monitoring_url>",
+        "https://zerodt.live/grafana/",
         # Logging URL:
         "<logging_url>",
     ],
