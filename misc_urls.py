@@ -9,9 +9,9 @@ GROUP_URLS = [
     ],
     [
         "group b",
-        "<name>",
+        "Carl⏰",
         # Monitoring URL:
-        "<monitoring_url>",
+        http://165.227.170.149:3000
         # Logging URL:
         "<logging_url>",
     ],
