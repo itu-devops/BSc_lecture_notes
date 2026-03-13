@@ -3,7 +3,7 @@ GROUP_URLS = [
         "group a",
         "<name>",
         # Monitoring URL:
-        "<monitoring_url>",
+        "https://zerodt.live/grafana/",
         # Logging URL:
         "<logging_url>",
     ],
@@ -17,27 +17,25 @@ GROUP_URLS = [
     ],
     [
         "group c",
-        "<name>",
+        "Group C",
         # Monitoring URL:
-        "<monitoring_url>",
+        "http://161.35.68.148:3000",
         # Logging URL:
         "<logging_url>",
     ],
     [
         "group d",
-        "Mixed",
+        "<name>",
         # Monitoring URL:
-        # This Grafana instance is currently running on a VM that we set up for staging, so it is not showing the metrics from the real simulator.
-        # Once we have all of the components ready, we'll apply it to the production server and update the URL here accordingly.
-        "http://134.122.71.241:3000/public-dashboards/755d9f514e484aa6b762b721edb282fb",
+        "<monitoring_url>",
         # Logging URL:
         "<logging_url>",
     ],
     [
         "group e",
-        "<name>",
+        "Group E Dashboard Minitwit",
         # Monitoring URL:
-        "<monitoring_url>",
+        "http://209.38.209.29:3000/public-dashboards/c13660544ba1472688314005db4ba3cc",
         # Logging URL:
         "<logging_url>",
     ],
@@ -123,17 +121,17 @@ GROUP_URLS = [
     ],
     [
         "group o",
-        "<name>",
+        "Rollback and relax",
         # Monitoring URL:
-        "<monitoring_url>",
+        "http://ec2-13-51-198-31.eu-north-1.compute.amazonaws.com:3001/dashboards",
         # Logging URL:
         "<logging_url>",
     ],
     [
         "group p",
-        "<name>",
+        "EastTOps",
         # Monitoring URL:
-        "<monitoring_url>",
+        "http://164.90.229.101:3000/dashboards",
         # Logging URL:
         "<logging_url>",
     ]
