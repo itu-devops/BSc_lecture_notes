@@ -80,8 +80,8 @@ GROUP_REPOS = [
         "group o",
         "Rollback & Relax",
         ["https://github.com/alqeren1/devops"],
-        "http://ec2-13-51-198-31.eu-north-1.compute.amazonaws.com:3000",
-        "http://ec2-13-51-198-31.eu-north-1.compute.amazonaws.com:5001",
+        "http://ec2-16-171-31-204.eu-north-1.compute.amazonaws.com:3000",
+        "http://ec2-16-171-31-204.eu-north-1.compute.amazonaws.com:5001",
     ],
     [
         "group p",
