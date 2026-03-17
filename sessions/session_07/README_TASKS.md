@@ -7,7 +7,7 @@
   - [0) Add tests to your CI chain](#0-add-tests-to-your-ci-chain)
   - [1) Enhance your CI Pipelines with at least three static analysis tools](#2-enhance-your-ci-pipelines-with-at-least-three-static-analysis-tools)
   - [2) Add Maintainability and Technical Debt estimation tools to your projects](#1-add-maintainability-and-technical-debt-estimation-tools-to-your-projects)
-  - [4) Software Maintenance](#3-software-maintenance)
+  - [3) Software Maintenance](#3-software-maintenance)
 
 
 ## 0) Add tests to your CI chain

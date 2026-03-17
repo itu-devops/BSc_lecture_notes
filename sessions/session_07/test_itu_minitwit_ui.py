@@ -33,7 +33,7 @@ from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.firefox.options import Options
 
 
-GUI_URL = "http://localhost:5000/register"
+GUI_URL = "http://localhost:5001/register"
 DB_URL = "mongodb://localhost:27017/test"
 
 
@@ -82,7 +82,7 @@ def test_register_user_via_gui_and_check_db_entry():
     database yet. After registering a user, it checks that the respective user appears in the database.
     """
     firefox_options = Options()
-    firefox_options.add_argument("--headless")
+    # firefox_options.add_argument("--headless")
     # firefox_options = None
     with webdriver.Firefox(service=Service("./geckodriver"), options=firefox_options) as driver:
         db_client = pymongo.MongoClient(DB_URL, serverSelectionTimeoutMS=5000)
