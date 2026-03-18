@@ -65,11 +65,11 @@ GROUP_URLS = [
     ],
     [
         "group i",
-        "<name>",
+        "Team Connie",
         # Monitoring URL:
-        "<monitoring_url>",
+        "http://146.190.204.218:3000",
         # Logging URL:
-        "<logging_url>",
+        "http://146.190.204.218:9090",
     ],
     [
         "group j",
