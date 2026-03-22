@@ -101,7 +101,7 @@ GROUP_URLS = [
         # Monitoring URL:
         "http://161.35.211.34:3000/login",
         # Logging URL:
-        "<logging_url>",
+        "http://161.35.211.34:3000/a/grafana-lokiexplore-app/explore?patterns=%5B%5D&from=now-15m&to=now&timezone=browser&var-lineFormat=&var-ds=afga3cqwurbb4d&var-filters=&var-fields=&var-levels=&var-metadata=&var-jsonFields=&var-all-fields=&var-patterns=&var-lineFilterV2=&var-lineFilters=&var-primary_label=service_name%7C%3D~%7C.%2B",
     ],
     [
         "group m",
