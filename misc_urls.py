@@ -65,11 +65,11 @@ GROUP_URLS = [
     ],
     [
         "group i",
-        "<name>",
+        "Team Connie",
         # Monitoring URL:
-        "<monitoring_url>",
+        "http://146.190.204.218:3000/dashboards",
         # Logging URL:
-        "<logging_url>",
+        "http://146.190.204.218:3000/d/37bab9d9-f176-44cd-a6d5-3d2aa286a5cb/minitwit-logging-dashboard?orgId=1&from=now-6h&to=now&timezone=browser",
     ],
     [
         "group j",
