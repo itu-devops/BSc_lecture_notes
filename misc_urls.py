@@ -21,7 +21,7 @@ GROUP_URLS = [
         # Monitoring URL:
         "https://srv1039100.tail89935c.ts.net:10000",
         # Logging URL:
-        "<logging_url>",
+        "https://srv1039100.tail89935c.ts.net:10000/d/bfga4her3fgg0f/logs?orgId=1",
     ],
     [
         "group d",
