@@ -16,7 +16,7 @@
 
 #### B) Read a Paper
 
-Read the first 7 pages of Kitchenham et al. [_"Software quality: the elusive target"_](https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=d7a45bdd09e59dde273da90448232ddbc7287f70) until section "MODELING QUALITY".
+Read the first 7 pages of Kitchenham et al. [_"Software quality: the elusive target"_](https://ituniversity-my.sharepoint.com/:b:/g/personal/ropf_itu_dk/IQCbZjcbndRGQpPrKfybFGw_ARBGsGJN8kR6lTXxfd14AO0?e=mQOpWm) until section "MODELING QUALITY".
 
 If you feel like you can of course read the entire paper.
 

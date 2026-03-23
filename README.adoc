@@ -85,8 +85,8 @@ link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/sessio
 |8:00 - 12:00
 |link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_08/README_PREP.md[Prep. material]
 |link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_08/Slides.md[Logging and Log Analysis]
-|link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_08/README_EXERCISE.md[A Basic EFK Stack]
-|link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_08/README_TASKS.md[Add logging to your _ITU-MiniTwit_ and UI Testing Each Others Systems]
+|link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_08/README_EXERCISE.md[A Basic Grafana Loki Stack]
+|link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_08/README_TASKS.md[Add logging to your _ITU-MiniTwit_]
 // w13
 |9
 |24/3

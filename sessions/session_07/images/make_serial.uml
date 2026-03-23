@@ -1,0 +1,14 @@
+@startuml
+start
+:install-dev-deps;
+partition all {
+:format;
+partition lint {
+  :lint-ruff;
+  :lint-mypy;
+}
+:test;
+:build;
+}
+stop
+@enduml
