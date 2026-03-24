@@ -107,9 +107,9 @@ GROUP_URLS = [
         "group m",
         "Jackhammers",
         # Monitoring URL:
-        "http://178.104.27.224:3000",
+        "http://178.104.27.224:3000/d/chirp-aspnet-001/windysquirrels-monitoring-dashboard",
         # Logging URL:
-        "<logging_url>",
+        "http://178.104.27.224:3000/d/app-logging-dashboard/windysquirrels-logging-dashboard",
     ],
     [
         "group n",
