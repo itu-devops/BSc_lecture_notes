@@ -24,8 +24,8 @@ GROUP_REPOS = [
         "group d",
         "Mixed",
         ["https://github.com/KaramTNC/itu-minitwit"],
-        "http://46.101.201.186:5001",
-        "http://46.101.201.186:8080",
+        "https://bettertwitter.ninja/",
+        "https://api.bettertwitter.ninja",
     ],
     [
         "group e",
