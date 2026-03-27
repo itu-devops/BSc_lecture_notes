@@ -1,5 +1,7 @@
 # Availability
 
+![](assets/if-coding-is-solved.png)
+
 Mircea Lungu, Associate Professor,<br>
 [IT University of Copenhagen, Denmark](https://www.itu.dk)<br>
 `mlun@itu.dk`
@@ -8,7 +10,7 @@ Mircea Lungu, Associate Professor,<br>
 
 ## An anticipated launch
 
-The dream of Obama was to offer to the US healthcare insurance. Highly anticipated, the launch of [healthcare.gov](https://www.cbsnews.com/news/healthcaregov-plagued-by-crashes-on-1st-day/) was a disaster: it resulted in the system experiencing a quick performance degradation to the point where the whole website was down soon after its official launch. 
+The dream of Obama was to offer affordable healthcare insurance to all US citizens. Highly anticipated, the launch of [healthcare.gov](https://www.cbsnews.com/news/healthcaregov-plagued-by-crashes-on-1st-day/) was a disaster: it resulted in the system experiencing a quick performance degradation to the point where the whole website was down soon after its official launch. 
 
 ![360](images/healthcare_gov.png)
 
@@ -17,23 +19,34 @@ The dream of Obama was to offer to the US healthcare insurance. Highly anticipat
 > Matt Warren said he will try again Wednesday. There are about six million uninsured residents in Texas. It's estimated half of them could be covered by the Affordable Care Act.
 https://www.cbsnews.com/news/healthcaregov-plagued-by-crashes-on-1st-day/
 
+The reason? Too many users wanted to use it at the same time!
+
 How do we technically describe what happened? We say that 
 
 > the system had low **availability** 
 > 
 It failed to serve users due to insufficient **scalability** under load.
 
-### Other scalability stories
+### Lack of availability due to scalability stories
+
+#### Ticketmaster down for Taylor Swift concert
+
 - Ticketmaster being [down](https://www.educative.io/blog/taylor-swift-ticketmaster-meltdown) when 13million fans showed up to buy tickets instead of the expected 1.5million
+
+#### Twitter became famous for their "*fail whale*"
 - Twitter used to [show the fail whale a lot](https://medium.com/@yadavmpadiyar/scaling-up-1-twitter-from-fail-whale-to-real-time-global-scale-d4af68965a70) because of their Rails monolithic architecture was hard to scale. Went from 200-300 req/s per host (Ruby) to 10,000-20,000 (Java/Scala)
 
-### Other availability stories (misconfiguration / human error)
+### Lack of availability due to misconfiguration or human error
+
+#### Facebook's BGP misconfiguration took down half the internet's social media
 - A [BGP misconfiguration](https://blog.cloudflare.com/october-2021-facebook-outage/) took down Facebook, Instagram, and WhatsApp for 6 hours. Engineers couldn't even enter buildings because ID systems were down too
-- An engineer accidentally [ran `rm -rf` on the production database](https://about.gitlab.com/blog/postmortem-of-database-outage-of-january-31/) during a maintenance operation. 5 out of 5 backup methods failed. They lost 6 hours of data
 
-## Introduction to Availability 
+#### GitLab's `rm -rf` on the production database
+- A GitLab engineer accidentally [ran `rm -rf` on the production database](https://about.gitlab.com/blog/postmortem-of-database-outage-of-january-31/) during a maintenance operation. 5 out of 5 backup methods failed. They lost 6 hours of data
 
-### What is availability? 
+## Availability  and how to strive for it
+
+### Availability is the proportion of time a system is operational
 
 **Availability** is 
 - a quality attribute... 
@@ -53,10 +66,11 @@ Every additional "nine" increases the expectations on your system uptime.
 
 ![](assets/number-of-nines.png)
 
-**Relevant** especially in the context of 
+**Relevant** in the context of 
 - mission-critical systems
 - healthcare
 - banks
+- cloud APIs 
 - online services and apps
 
 
@@ -83,7 +97,7 @@ Personal story: demoing Zeeguu to a roomful of polyglots.
 
 
 Scenario: 
-> > Your user authentication system is slow, and your application becomes really popular with many users trying to create accounts at the same time. **The server’s CPU becomes a bottleneck** hashing algorithms used by the application is computationally intensive, causing login delays, and users going away from the system. 
+> Your user authentication system is slow, and your application becomes really popular with many users trying to create accounts at the same time. **The server’s CPU becomes a bottleneck** — the hashing algorithm used by the application is computationally intensive, causing login delays, and users going away from the system.
 
 
 We say that such an architecture has encountered a **congestion**, which is **reduced quality of service that occurs when a network node or link is attempting to handle more data than it can**. 
@@ -145,7 +159,6 @@ No matter how performant our algorithms, comes a time when we need a more powerf
 
 # Vertical Scaling
 
-
 ## Vertical scaling literally means **replacing resources with larger or more powerful ones**
 
 There are two ways to do it: 
@@ -168,7 +181,7 @@ Repartitioning
 
 ---
 
-### Example 2: Vertical Scaling VirtuaBox from the CLI
+### Example 2: Vertical Scaling VirtualBox from the CLI
 
 ```bash
 $ VBoxManage list vms
@@ -238,7 +251,8 @@ $ curl -X POST -H 'Content-Type: application/json' \
 - $DIGITAL_OCEAN_TOKEN environment variable is defined
 - $DROPLET_ID is defined
 - Image types and sizes at: https://slugs.do-api.dev/
---
+
+---
 
 - Resize CPU and RAM **automatically shuts down the droplet** 
 
@@ -253,7 +267,7 @@ Discussion: why REST is particularly nice for IaC
 
 ---
 
-## Vertical scaling is appropriate for legacy systems, specific software, and predictable growth
+## Vertical scaling is appropriate for legacy systems and predictable workloads
 
 - Legacy systems (e.g. bank mainframes)
 
@@ -263,7 +277,7 @@ Discussion: why REST is particularly nice for IaC
 
 
 
-## Vertical scaling is not appropriate for high variability workloads, or some workloads that are too big
+## Vertical is not be ideal for high variability workloads and some workloads are just too big for it
 
 - You have to adapt fast to varying workload (e.g. Black Friday for web shops, Ticketmaster when Taylor Swift concerts, etc.). 
 
@@ -294,9 +308,9 @@ Two components:
 ## From bigger machines to more machines
 
 - [As of **2000** Google can not host all their DB on a single machine](https://www.linkedin.com/pulse/how-did-google-scale-untold-story-shrey-batra/?trk=articles_directory).
-- The only way that Google could keep up was by buying normal computers and wiring them together into a fleet
-- Because half the cost of these computers was considered junk—floppy drives, metal chassis—the company would order raw motherboards and hard drives and sandwich them together
-- In **2004** they introduce the [MapReduce paper](papers/mapreduce-osdi04.pdf) to propose an architecture for distributing the DB and subsequent queries over an array of machines
+	- The only way they can keep up is buying normal computers and wiring them together into a fleet
+	- Because half the cost of these computers is considered junk—floppy drives, metal chassis—the company orders raw motherboards and hard drives and *sandwich* them together
+- In **2004** they introduce the [MapReduce paper](papers/mapreduce-osdi04.pdf) to propose a software architecture for distributing the DB and subsequent queries over an array of machines
 
 *We take this for granted today, but it was a very revolutionary idea two decades ago*
 
@@ -471,6 +485,20 @@ Good examples of global service? A **log shipper** or a **monitoring container**
 
 Read more:  https://docs.docker.com/engine/swarm/ingress
 
+#### 6. Health Checks
+
+- How does the swarm know when a service is unhealthy and needs to be restarted?
+- You can define a `healthcheck` in your Dockerfile or `docker-compose.yml`
+- Swarm uses health checks to decide when to restart tasks and when to reroute traffic during rolling updates
+
+```yaml
+healthcheck:
+  test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+  interval: 30s
+  timeout: 10s
+  retries: 3
+```
+
 ## Stateless vs. Stateful Services 
 
 There are two types of services
@@ -498,33 +526,20 @@ General principle: **a container should be disposable**. If you can kill it and 
 
 Common approaches to solving this:
 
-1. **Stateless tokens (JWT)** — encode session data in the token itself. No server-side state needed. Signing key, is a config value shared across replicas. Simplest if your session data is small (user ID, role, expiry).
-2. **External session store** — move sessions to Redis, Memcached, or the database. Any replica can look up the session.
+1. **Stateless tokens (JWT)** — encode session data in the token itself. No server-side state needed. Signing key is a config value shared across replicas. Simplest if your session data is small (user ID, role, expiry).
+2. **External session store** — move sessions to Redis, Memcached (in-memory key-value stores — fast because everything lives in RAM, fine for sessions since losing them just means users re-login), or the database. Any replica can look up the session.
 3. **Sticky sessions** — the load balancer always routes the same user to the same replica. Works but if that replica dies, the session is lost.
 
 
 #### Specifically for your project: Handling the Latest ID
 
-You very likely have to take the Latest ID out of the container too — otherwise every containers sees a different value. 
+You very likely have to take the Latest ID out of the container too — otherwise every container sees a different value.
 
-Solution: store it in the database.
+Solutions:
+1. **Database** — simplest, you already have one. A single read/write won't be a bottleneck.
+2. **Redis** — faster in some cases, unlikely for a single int. Also adds a dependency you might not otherwise need.
 
-## Tradeoffs of horizontal scaling
-
-**It can be more complicated than vertical** (see [hacker news thread on k8s](https://news.ycombinator.com/item?id=26271470))
-
-**Because Google and Facebook need it**... 
-- ... that's why probably you don't 
-- ... some of these technologies can be quite complicated (e.g. k8s -- aims to be a **generalized solution** to distributed systems design that ... also works at Google! )
-
-
-
-
-
-
-
-
-
+If you go with JWT for auth + database for Latest ID, you don't need Redis at all. That's the simplest path.
 
 
 # Upgrading replicated services
@@ -535,7 +550,7 @@ Two possible upgrade strategies:
 2. Rolling Updates
 
 
-#### Blue-green
+## Blue-green
 
 Conceptually: 
 - **Two identical environments, where only one (green) is hot at any time**
@@ -557,7 +572,7 @@ More about [colorful deployments](https://opensource.com/article/17/5/colorful-d
 
 
 
-#### Rolling Updates
+## Rolling Updates
 
 **Deploy the upgrade in rolling iterations**
 
@@ -573,7 +588,7 @@ Note:
 - [Rolling Updates Swarm Tutorial](https://docs.docker.com/engine/swarm/swarm-tutorial/rolling-update/ ) 
 
 
-### Upgrade strategies in docker swarm 
+## Upgrade strategies in docker swarm 
 
 Two `update-order` options: (stop-first|start-first) 
 - `stop-first` (default) -- corresponds to rolling updates
@@ -587,7 +602,9 @@ Two `update-order` options: (stop-first|start-first)
 
 ## How to migrate from docker-compose to docker swarm?
 
-It's simple. 
+In the [exercise](./README_EXERCISE.md) you'll first learn the imperative commands (`docker service create`, `docker service scale`). Here we look at the declarative approach — using your existing compose file.
+
+It's simple.
 
 You **add a little bit of extra information** in the `docker-compose.yml` under the **deploy** key:
 - replicas
@@ -630,7 +647,13 @@ See: [The Difference Between Docker Compose And Docker Stack](https://vsupalov.c
 
 ## Scaling in practice: you can go quite far without orchestration
 
-- [Brief History of Scaling at LinkedIn](https://engineering.linkedin.com/architecture/brief-history-scaling-linkedin): *"An easy fix we did was classic vertical scaling ... While that bought some time, we needed to scale further"*. Started vertical, had to go horizontal. 
+**Horizontal scaling can be more complicated than vertical** (see [hacker news thread on k8s](https://news.ycombinator.com/item?id=26271470))
+
+**Because Google and Facebook need it**...
+- ... that's why probably you don't
+- ... some of these technologies can be quite complicated (e.g. k8s — aims to be a **generalized solution** to distributed systems design that ... also works at Google!)
+
+- [Brief History of Scaling at LinkedIn](https://engineering.linkedin.com/architecture/brief-history-scaling-linkedin): *"An easy fix we did was classic vertical scaling ... While that bought some time, we needed to scale further"*. Started vertical, had to go horizontal.
 - Thibault Duplessis on the architecture of Lichess — no orchestration, still works.
 - StackOverflow does not use horizontal scaling ([podcast](https://hanselminutes.com/847/engineering-stack-overflow-with-roberta-arcoverde), [tweet](images/StackOverflowInfraTweet.png)). Still works.
 

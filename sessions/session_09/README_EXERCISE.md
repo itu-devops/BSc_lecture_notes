@@ -317,8 +317,12 @@ curl -X DELETE\
 See: [documentation](https://docs.digitalocean.com/reference/api/api-reference/#operation/droplets_destroy_byTag)  for the delete API endpoint
 
 
-Note: 
-- The interactive guide is based on the [tutorial at DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-create-a-cluster-of-docker-containers-with-docker-swarm-and-digitalocean-on-ubuntu-16) 
+Note:
+- The interactive guide is based on the [tutorial at DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-create-a-cluster-of-docker-containers-with-docker-swarm-and-digitalocean-on-ubuntu-16)
+
+### Next step: declarative deployment with `docker stack`
+
+In this exercise you used imperative commands (`docker service create`, `docker service scale`). For your projects, you'll want the declarative approach: add a `deploy` key to your existing `docker-compose.yml` and use `docker stack deploy`. See the [lecture slides](./Slides.md#how-to-migrate-from-docker-compose-to-docker-swarm) for details.
 
 
 
