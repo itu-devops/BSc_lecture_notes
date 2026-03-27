@@ -20,13 +20,12 @@ Implement an automatic update strategy in your build chain. Choose either rollin
 ## 3) Add an Availability View to your Monitoring Dashboard
 
 Add at least the following to your Grafana dashboard:
+- **Service health** — is each service up or down (based on a health check endpoint)
 - **HTTP success rate** — percentage of non-5xx responses over time
 - **Response time** — P95 latency (the response time that 95% of requests are faster than) for at least your key API endpoints (e.g., the simulator endpoints)
-- **Service health** — is each service up or down (based on a health check endpoint)
-
 Show these over the last week and last month.
 
-Bonus: set up an **alert** (e.g., in Grafana or via a Slack webhook) that notifies you when availability drops below a threshold.
+**Bonus**: set up an **alert** (e.g., in Grafana or via a Slack webhook) that notifies you when availability drops below a threshold.
 
 
 

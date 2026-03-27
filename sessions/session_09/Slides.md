@@ -27,7 +27,7 @@ How do we technically describe what happened? We say that
 > 
 It failed to serve users due to insufficient **scalability** under load.
 
-### Lack of availability due to scalability stories
+### Lack of scalability is often the reason for lack of availability 
 
 #### Ticketmaster down for Taylor Swift concert
 
@@ -36,17 +36,14 @@ It failed to serve users due to insufficient **scalability** under load.
 #### Twitter became famous for their "*fail whale*"
 - Twitter used to [show the fail whale a lot](https://medium.com/@yadavmpadiyar/scaling-up-1-twitter-from-fail-whale-to-real-time-global-scale-d4af68965a70) because of their Rails monolithic architecture was hard to scale. Went from 200-300 req/s per host (Ruby) to 10,000-20,000 (Java/Scala)
 
-### Lack of availability due to misconfiguration or human error
+### Lack of availability can also be due to misconfiguration or human error
 
-#### Facebook's BGP misconfiguration took down half the internet's social media
 - A [BGP misconfiguration](https://blog.cloudflare.com/october-2021-facebook-outage/) took down Facebook, Instagram, and WhatsApp for 6 hours. Engineers couldn't even enter buildings because ID systems were down too
-
-#### GitLab's `rm -rf` on the production database
 - A GitLab engineer accidentally [ran `rm -rf` on the production database](https://about.gitlab.com/blog/postmortem-of-database-outage-of-january-31/) during a maintenance operation. 5 out of 5 backup methods failed. They lost 6 hours of data
 
 ## Availability  and how to strive for it
 
-### Availability is the proportion of time a system is operational
+### What is availability? 
 
 **Availability** is 
 - a quality attribute... 
@@ -82,7 +79,9 @@ Every additional "nine" increases the expectations on your system uptime.
 
 This is probably the architecture that many of your systems have at the moment. 
 
-We say that such an architecture has a **single point of failure**. This can be defined as an architecture in which ***a part of the system failing will stop the entire system from working***. 
+We say that such an architecture has a **single point of failure**. 
+
+This can be defined as an architecture in which ***a part of the system failing will stop the entire system from working***. 
 
 ![](images/possible_arch1.png)
 
@@ -97,7 +96,7 @@ Personal story: demoing Zeeguu to a roomful of polyglots.
 
 
 Scenario: 
-> Your user authentication system is slow, and your application becomes really popular with many users trying to create accounts at the same time. **The server’s CPU becomes a bottleneck** — the hashing algorithm used by the application is computationally intensive, causing login delays, and users going away from the system.
+> > Your user authentication system is slow, and your application becomes really popular with many users trying to create accounts at the same time. **The server’s CPU becomes a bottleneck** hashing algorithms used by the application is computationally intensive, causing login delays, and users going away from the system. 
 
 
 We say that such an architecture has encountered a **congestion**, which is **reduced quality of service that occurs when a network node or link is attempting to handle more data than it can**. 
@@ -181,7 +180,7 @@ Repartitioning
 
 ---
 
-### Example 2: Vertical Scaling VirtualBox from the CLI
+### Example 2: Vertical Scaling VirtuaBox from the CLI
 
 ```bash
 $ VBoxManage list vms
@@ -251,8 +250,7 @@ $ curl -X POST -H 'Content-Type: application/json' \
 - $DIGITAL_OCEAN_TOKEN environment variable is defined
 - $DROPLET_ID is defined
 - Image types and sizes at: https://slugs.do-api.dev/
-
----
+--
 
 - Resize CPU and RAM **automatically shuts down the droplet** 
 
@@ -267,7 +265,7 @@ Discussion: why REST is particularly nice for IaC
 
 ---
 
-## Vertical scaling is appropriate for legacy systems and predictable workloads
+## Vertical scaling is appropriate for legacy systems, specific software, and predictable workload
 
 - Legacy systems (e.g. bank mainframes)
 
@@ -277,7 +275,7 @@ Discussion: why REST is particularly nice for IaC
 
 
 
-## Vertical is not be ideal for high variability workloads and some workloads are just too big for it
+## Vertical scaling might not be ideal for high variability workloads, and might not be possible for some really large workloads
 
 - You have to adapt fast to varying workload (e.g. Black Friday for web shops, Ticketmaster when Taylor Swift concerts, etc.). 
 
@@ -304,13 +302,13 @@ Two components:
 
 ![420](images/scaling-graphic.png)
 
-
+![](assets/Pasted%20image%2020260327131351.png)
 ## From bigger machines to more machines
 
 - [As of **2000** Google can not host all their DB on a single machine](https://www.linkedin.com/pulse/how-did-google-scale-untold-story-shrey-batra/?trk=articles_directory).
 	- The only way they can keep up is buying normal computers and wiring them together into a fleet
 	- Because half the cost of these computers is considered junk—floppy drives, metal chassis—the company orders raw motherboards and hard drives and *sandwich* them together
-- In **2004** they introduce the [MapReduce paper](papers/mapreduce-osdi04.pdf) to propose a software architecture for distributing the DB and subsequent queries over an array of machines
+- In **2004** they introduce the [MapReduce paper](papers/mapreduce-osdi04.pdf) to propose an architecture for distributing the DB and subsequent queries over an array of machines
 
 *We take this for granted today, but it was a very revolutionary idea two decades ago*
 
@@ -318,8 +316,9 @@ Distributing data and computation across machines solves the congestion problem.
 
 ## Replicating Services
 
+Load Balancing = **Distributing traffic to — and computation across — multiple replicated servers**
 
-**Load balancing** = distributing incoming requests across multiple servers so that no single server is overwhelmed
+- Ensures no single server bears too much demand
 - Improves responsiveness
 - Adds redundancy: if one replica goes down, others can take over
 
@@ -335,18 +334,18 @@ Image from: [Horizontally Scaling PHP Applications](https://blog.digitalocean.co
 ---
 ### Redundant Load Balancer Setup
 
-How to make the balancer not anymore a single point of failure: [Heartbeat and Floating IP](https://www.digitalocean.com/community/tutorials/how-to-create-a-high-availability-setup-with-heartbeat-and-floating-ips-on-ubuntu-16-04)
+How to make the balancer not anymore a single point of failure: [Heartbeat and Floating IP](https://www.digitalocean.com/community/tutorials/how-to-create-a-high-availability-setup-with-heartbeat-and-floating-ips-on-ubuntu-16-04))
 
 [![600](images/ha-diagram-animated.gif)](https://assets.digitalocean.com/articles/high_availability/ha-diagram-animated.gif)
 
-- [Floating IP](https://blog.digitalocean.com/floating-ips-start-architecting-your-applications-for-high-availability/)  (named *reserved IP* in recent years)
+- [Floating IP](https://blog.digitalocean.com/floating-ips-start-architecting-your-applications-for-high-availability/)  (Reserved IP since 2022)
 	 - DigitalOcean name for static IPs
 	 - Equivalents on other platforms, e.g. Elastic IPs @ Amazon
 - Keepalived - daemon used for health check
 
 
 
-Read more about this setup:
+Where to read more about this setup
 - [Load Balancing as a Service on DO](https://blog.digitalocean.com/load-balancers-simplifying-high-availability/)
 - [HAProxy with Keepalived on Ubuntu](https://kifarunix.com/configure-highly-available-haproxy-with-keepalived-on-ubuntu-20-04)
 
@@ -354,13 +353,11 @@ Read more about this setup:
 
 ### Limitations of load balancing
 
-Load balancing and replication **solve traffic distribution and SPF**, but they don't **manage the fleet**. 
-
-As the number of nodes grows, who...
-- ... spins up **new services when one crashes**?
-- ... **decides which node runs which service**?
-- ... handles **rolling out updates without downtime**?
-- ... **scales up or down based on demand**?
+Load balancing and replication solve traffic distribution and SPF, but they don't manage the fleet. As the number of nodes grows, who...
+- ... spins up new services when one crashes?
+- ... decides which node runs which service?
+- ... handles rolling out updates without downtime?
+- ... scales up or down based on demand?
 
 That's what **container orchestration** adds on top of load balancing.
 
@@ -460,8 +457,7 @@ To think about:
 ![500](images/replicated_vs_global.png)
 
 
-##### Good examples of global service? A **log shipper** or a **monitoring container**. 
-It is important to ensure that the service is running on every node. By deploying the service as a global service, you can ensure that every node in the cluster has a copy of the service running, which can collect data from that node and forward it to a centralized location.
+Good examples of global service? A **log shipper** or a **monitoring container**. It is important to ensure that the service is running on every node. By deploying the service as a global service, you can ensure that every node in the cluster has a copy of the service running, which can collect data from that node and forward it to a centralized location.
 
 
 #### 4. Task
@@ -482,24 +478,10 @@ It is important to ensure that the service is running on every node. By deployin
   - for any service running in the swarm
   - even if there’s no task (container) running on the node
 
-- Can support load balancing in Docker Swarm
+- Supports load balancing in Docker Swarm
 
 
 Read more:  https://docs.docker.com/engine/swarm/ingress
-
-#### 6. Health Checks
-
-- How does the swarm know when a service is unhealthy and needs to be restarted?
-- You can define a `healthcheck` in your Dockerfile or `docker-compose.yml`
-- Swarm uses health checks to decide when to restart tasks and when to reroute traffic during rolling updates
-
-```yaml
-healthcheck:
-  test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
-  interval: 30s
-  timeout: 10s
-  retries: 3
-```
 
 ## Stateless vs. Stateful Services 
 
@@ -528,9 +510,9 @@ General principle: **a container should be disposable**. If you can kill it and 
 
 Common approaches to solving this:
 
-1. **Stateless tokens (JWT)** — encode session data in the token itself. No server-side state needed. Signing key is a config value shared across replicas. Simplest if your session data is small (user ID, role, expiry).
+1. **Stateless tokens (JWT)** — encode session data in the token itself. No server-side state needed. Signing key, is a config value shared across replicas. Simplest if your session data is small (user ID, role, expiry).
 2. **External session store** — move sessions to Redis, Memcached (in-memory key-value stores — fast because everything lives in RAM, fine for sessions since losing them just means users re-login), or the database. Any replica can look up the session.
-3. **Sticky sessions** — the load balancer always routes the same user to the same replica. Works but if that replica dies, the session is lost.
+3. For load balancing: **Sticky sessions** — the load balancer always routes the same user to the same replica. Works but if that replica dies, the session is lost.
 
 
 #### Specifically for your project: Handling the Latest ID
@@ -543,16 +525,26 @@ Solutions:
 
 If you go with JWT for auth + database for Latest ID, you don't need Redis at all. That's the simplest path.
 
+## Tradeoffs of horizontal scaling
+
+**It can be more complicated than vertical** (see [hacker news thread on k8s](https://news.ycombinator.com/item?id=26271470))
+
+**Because Google and Facebook need it**... 
+- ... that's why probably you don't 
+- ... some of these technologies can be quite complicated (e.g. k8s -- aims to be a **generalized solution** to distributed systems design that ... also works at Google! )
+
+
+
 
 # Upgrading replicated services
 
-Two main upgrade strategies: 
+Two possible upgrade strategies: 
 
 1. Blue-Green
 2. Rolling Updates
 
 
-## Blue-green
+#### Blue-green
 
 Conceptually: 
 - **Two identical environments, where only one (green) is hot at any time**
@@ -565,7 +557,7 @@ Step by step:
   2. New version (Blue) is deployed and tested, but not yet receiving traffic
   3. When Blue is ready, orchestration / load balancer starts sending incoming traffic to it too
   4. For a while: two versions of the application run in parallel
-  5. orchestration / load balancer stops sending incoming traffic to the "Green"; "Blue" is handling all the incoming traffic
+  5. Orchestration / load balancer stops sending incoming traffic to the "Green"; "Blue" is handling all the incoming traffic
   6. Green can now be safely removed
   7. Blue is marked as Green...
 
@@ -574,7 +566,7 @@ More about [colorful deployments](https://opensource.com/article/17/5/colorful-d
 
 
 
-## Rolling Updates
+#### Rolling Updates
 
 **Deploy the upgrade in rolling iterations**
 
@@ -590,7 +582,7 @@ Note:
 - [Rolling Updates Swarm Tutorial](https://docs.docker.com/engine/swarm/swarm-tutorial/rolling-update/ ) 
 
 
-## Upgrade strategies in docker swarm 
+### Upgrade strategies in docker swarm 
 
 Two `update-order` options: (stop-first|start-first) 
 - `stop-first` (default) -- corresponds to rolling updates
@@ -602,25 +594,9 @@ Two `update-order` options: (stop-first|start-first)
 
 # Practicals
 
-## Scaling in practice: you can go quite far without orchestration
+## How to migrate from `docker-compose.yml` to docker swarm?
 
-**Horizontal scaling can be more complicated than vertical** (see [hacker news thread on k8s](https://news.ycombinator.com/item?id=26271470))
-
-**Because Google and Facebook need it**...
-- ... that's why probably you don't
-- ... some of these technologies can be quite complicated (e.g. k8s — aims to be a **generalized solution** to distributed systems design that ... also works at Google!)
-
-- [Brief History of Scaling at LinkedIn](https://engineering.linkedin.com/architecture/brief-history-scaling-linkedin): *"An easy fix we did was classic vertical scaling ... While that bought some time, we needed to scale further"*. Started vertical, had to go horizontal.
-- Thibault Duplessis on the architecture of Lichess — no orchestration, still works.
-- StackOverflow does not use horizontal scaling ([podcast](https://hanselminutes.com/847/engineering-stack-overflow-with-roberta-arcoverde), [tweet](images/StackOverflowInfraTweet.png)). Still works.
-
-![400](images/StackOverflowInfraTweet.png)
-
-## How to migrate from docker-compose to docker swarm?
-
-In the [exercise](./README_EXERCISE.md) you'll create the swarm infrastructure — provisioning nodes, initializing the swarm, joining workers. Here we look at the next step: how to deploy your services onto that swarm using your existing compose file.
-
-It's simple.
+It's simple. 
 
 You **add a little bit of extra information** in the `docker-compose.yml` under the **deploy** key:
 - replicas
@@ -661,10 +637,18 @@ See: [The Difference Between Docker Compose And Docker Stack](https://vsupalov.c
 
 
 
+# Scaling in practice: you can go quite far without orchestration
+
+- [Brief History of Scaling at LinkedIn](https://engineering.linkedin.com/architecture/brief-history-scaling-linkedin): *"An easy fix we did was classic vertical scaling ... While that bought some time, we needed to scale further"*. Started vertical, had to go horizontal. 
+- Thibault Duplessis on the architecture of Lichess — no orchestration, still works.
+- StackOverflow does not use horizontal scaling ([podcast](https://hanselminutes.com/847/engineering-stack-overflow-with-roberta-arcoverde), [tweet](images/StackOverflowInfraTweet.png)). Still works.
+
+![400](images/StackOverflowInfraTweet.png)
+
 # What Next?
 
 Exercise: [**Swarm creation on DigitalOcean**](./README_EXERCISE.md).
-Practical: [**Increase the scalability and availability of your API**](README_TASKS.md) in preparation for the **future increase in user requests** ^^!!
+Practical: [**Scale your API**](README_TASKS.md) in preparation for the **future increase in user requests** ^^!!
 
 # References
 - [Redundancy in Distributed Systems](https://csis.pace.edu/~marchese/CS865/Lectures/Chap8/New8/Chapter8.html) — Tanenbaum's elaborate treatment of redundancy and fault tolerance
@@ -673,4 +657,4 @@ Practical: [**Increase the scalability and availability of your API**](README_TA
 # History
 
 2025, added docker stack discussion
-2026, added availability stories (Ticketmaster, Twitter, Facebook, GitLab), stateless services section, limitations of load balancing bridge, better structure for the whole lecture
+2026, added availability stories (Ticketmaster, Twitter, Facebook, GitLab), stateless services section, limitations of load balancing bridge
