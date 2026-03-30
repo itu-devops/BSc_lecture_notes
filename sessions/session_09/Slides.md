@@ -647,7 +647,7 @@ See: [The Difference Between Docker Compose And Docker Stack](https://vsupalov.c
 
 # What Next?
 
-Exercise: [**Swarm creation on DigitalOcean**](./README_EXERCISE.md).
+Exercise: [**Swarm creation on DigitalOcean**](./README_EXERCISE.md) or even better, the [version that Patrick created for you that includes the docker stack spec](https://github.com/itu-devops/itu-minitwit-docker-swarm). 
 Practical: [**Scale your API**](README_TASKS.md) in preparation for the **future increase in user requests** ^^!!
 
 # References
