@@ -379,6 +379,9 @@ Container orchestration tools...
 - We use it in this course because it's the simplest way to learn orchestration concepts
 
 #### **Kubernetes**
+
+![](assets/kubernetes-not-stressful.png)
+
   * Originally developed at Google
   * The industry standard — [82% of container users run it in production](https://thedecipherist.com/articles/docker_swarm_vs_kubernetes/)
   * Much more powerful, but significantly more complex ([see hacker news discussion](https://news.ycombinator.com/item?id=26271470))
