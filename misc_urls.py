@@ -43,9 +43,9 @@ GROUP_URLS = [
         "group f",
         "if time > 16 {beer++;}",
         # Monitoring URL:
-        "http://209.38.255.154:3000",
+        "http://209.38.255.154:3000/d/ad8crlm/monitoring-prod",
         # Logging URL:
-        "<logging_url>",
+        "http://209.38.255.154:3000/d/adg2x7j/logging-prod",
     ],
     [
         "group g",
