@@ -87,7 +87,7 @@ GROUP_REPOS = [
         "group o",
         "NO.1",
         ["https://github.com/YUMJiHyeon/DEVOPS"],
-        "http://129.212.212.105:5000",
+        "https://devopsgroupo.me",
         "http://129.212.212.105:5000",
     ],
 ]
