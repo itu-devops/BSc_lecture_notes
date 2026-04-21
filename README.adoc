@@ -117,24 +117,24 @@ link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/sessio
 |8:00 - 12:00
 |
 |link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_11/Slides.md[Docker Swarm and Infrastructure as Code Revisited]
-|link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_11/README_EXERCISE.md[MiniTwit on Docker Swarm and Infrastructure as Code]]
+|link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_11/README_EXERCISE.md[MiniTwit on Docker Swarm and Infrastructure as Code]
 |link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_11/README_TASKS.md[IaC]
 // w17
 |12
 |21/4
 |8:00 - 12:00
 |
-|*Guest Lecture: DevOps@NetCompany by Tarik*, link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_12/Slides.md[Documentation of Systems and Projects]
+|*Guest Lecture: DevOps@NetCompany by Tarik*, link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/exam_details.md[Exam Information]
 |
-|
+|link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/exam_details.md[Start work on the report]
 // w18
 |13
 |28/4
 |8:00 - 12:00
 |
-|link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_13/Slides.md[Exam prep., Thesis topics, Evaluation, Cookies :)]
+|link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/session_13/Slides.md[Documentation of Systems and Projects, Thesis topics, Evaluation, Cookies :)]
 |
-|*Simulator stops*. Write report.
+|link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/exam_details.md[Write report]
 // w19
 |14
 |5/5
@@ -142,7 +142,7 @@ link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/sessions/sessio
 |
 |
 |
-|Write report.
+|*Simulator stops*. link:https://github.com/itu-devops/BSc_lecture_notes/blob/master/exam_details.md[Write report]
 |=======================================================================
 
 * Exam submission: Latest Friday *22/5/2026 14:00* via WISEflow

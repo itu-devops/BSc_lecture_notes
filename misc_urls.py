@@ -83,9 +83,9 @@ GROUP_URLS = [
         "group k",
         "DevBobs",
         # Monitoring URL:
-        "http://209.38.230.113:3000/",
+        "http://134.199.190.79:3000/",
         # Logging URL:
-        "http://209.38.230.113:3000/a/grafana-lokiexplore-app/explore",
+        "http://134.199.190.79:3000/a/grafana-lokiexplore-app/explore",
     ],
     [
         "group a",
