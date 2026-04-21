@@ -67,7 +67,7 @@ GROUP_REPOS = [
         "DevBobs",
         ["https://github.com/DevBobs-devops/Devbobs_MiniTwit"],
         "https://devbobs.tech/",
-        "http://209.38.230.113:8080",
+        "http://134.199.190.79:8080",
     ],
     [
         "group l",
