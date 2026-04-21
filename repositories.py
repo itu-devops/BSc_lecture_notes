@@ -3,8 +3,8 @@ GROUP_REPOS = [
         "group a",
         "Ducks",
         ["https://github.com/Alexitu01/DevOps_Ducks"],
-        "http://46.101.127.217",
-        "http://46.101.127.217",
+        "https://devopsducks.studio/",
+        "https://devopsducks.studio/",
     ],
     [
         "group b",
