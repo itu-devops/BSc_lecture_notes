@@ -27,9 +27,9 @@ GROUP_URLS = [
         "group d",
         "Mixed",
         # Monitoring URL:
-        "http://46.101.201.186:3000/public-dashboards/20c9bf97ebb94fccb4e1952a5551fb21",
+        "https://grafana.bettertwitter.ninja/dashboards",
         # Logging URL:
-        "<logging_url>",
+        "https://grafana.bettertwitter.ninja/a/grafana-lokiexplore-app/explore",
     ],
     [
         "group e",
