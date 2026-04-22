@@ -4,7 +4,7 @@ GROUP_REPOS = [
         "ZeroDownTime",
         ["https://github.com/ZeroDownTime-ITU/minitwit_project"],
         "https://zerodt.live/",
-        "http://zerodt.live:7070/api",
+        "http://zerodt.live/api",
     ],
     [
         "group b",
