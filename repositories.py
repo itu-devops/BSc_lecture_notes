@@ -87,8 +87,8 @@ GROUP_REPOS = [
         "group p",
         "EastTops",
         ["https://github.com/AntohaY/itu-minitwit"],
-        "http://164.90.229.101",
-        "http://164.90.229.101",
+        "https://itu-minitwit.me/",
+        "https://itu-minitwit.me/",
     ],
     [
         "group q",
