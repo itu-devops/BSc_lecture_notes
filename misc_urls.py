@@ -75,9 +75,9 @@ GROUP_URLS = [
         "group j",
         "Chirp Vee2",
         # Monitoring URL:
-        "http://157.245.27.199:3000/d/fegau3n6gywaoa/minitwit-example-dashboard?orgId=1&from=now-30m&to=now&timezone=browser",
+        "http://104.248.28.105:3000/dashboards",
         # Logging URL:
-        "http://157.245.27.199:3000/a/grafana-lokiexplore-app/explore?patterns=%5B%5D&from=now-15m&to=now&timezone=browser&var-lineFormat=&var-ds=loki&var-filters=&var-fields=&var-levels=&var-metadata=&var-jsonFields=&var-all-fields=&var-patterns=&var-lineFilterV2=&var-lineFilters=&var-primary_label=service_name%7C%3D~%7C.%2B",
+        "http://104.248.28.105:3000/a/grafana-lokiexplore-app/explore?patterns=%5B%5D&var-primary_label=service_name%7C%3D~%7C.%2B&from=now-15m&to=now&timezone=browser&var-lineFormat=&var-ds=loki&var-filters=&var-fields=&var-levels=&var-metadata=&var-jsonFields=&var-all-fields=&var-patterns=&var-lineFilterV2=&var-lineFilters=&var-filters_replica=",
     ],
     [
         "group k",
