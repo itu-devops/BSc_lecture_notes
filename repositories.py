@@ -45,8 +45,8 @@ GROUP_REPOS = [
         "group g",
         "GruppeOG",
         ["https://github.com/Joakim-David/GruppeOG"],
-        "http://142.93.169.145:7273",
-        "http://142.93.169.145:7273",
+        "https://chirpitu.live",
+        "https://chirpitu.live",
     ],
     [
         "group i",
