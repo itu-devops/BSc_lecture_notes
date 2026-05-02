@@ -10,8 +10,8 @@ GROUP_REPOS = [
         "group b",
         "Carl ⏰",
         ["https://github.com/DevOps-Group-B/MiniTwit"],
-        "http://165.227.170.149",
-        "http://165.227.170.149",
+        "http://138.68.126.154",
+        "http://138.68.126.154",
     ],
     [
         "group c",
