@@ -11,9 +11,9 @@ GROUP_URLS = [
         "group b",
         "Carl⏰",
         # Monitoring URL:
-        http://165.227.170.149:3000
+        "http://138.68.126.154:3000",
         # Logging URL:
-        "http://165.227.170.149:3000/a/grafana-lokiexplore-app",
+        "http://138.68.126.154:3000/a/grafana-lokiexplore-app",
     ],
     [
         "group c",
