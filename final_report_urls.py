@@ -19,9 +19,9 @@ REPORT_URLS = [
     ],
     [
         "group d",
-        "<name>",
+        "Mixed",
         # Report Release URL:
-        "https://github.com/<gh_id>/<proj_id>/archive/refs/tags/<version_tag>.zip",
+        "https://github.com/KaramTNC/itu-minitwit/archive/refs/tags/v2026.05.14-d6d4743.zip",
     ],
     [
         "group e",
