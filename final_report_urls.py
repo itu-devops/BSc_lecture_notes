@@ -49,15 +49,15 @@ REPORT_URLS = [
     ],
     [
         "group i",
-        "<name>",
+        "Team Connie",
         # Report Release URL:
-        "https://github.com/<gh_id>/<proj_id>/archive/refs/tags/<version_tag>.zip",
+        "https://github.com/21Philip/devops-minitwit/releases/tag/v1.3.2",
     ],
     [
         "group j",
         "<name>",
         # Report Release URL:
-        "https://github.com/<gh_id>/<proj_id>/archive/refs/tags/<version_tag>.zip",
+        "https://github.com/21Philip/devops-minitwit/releases/tag/v1.3.2",
     ],
     [
         "group k",
